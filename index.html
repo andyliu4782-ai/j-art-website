@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>嘉艺拍卖 J-Art Auction · 近现代中国书画 | 新加坡</title>
+<meta name="description" content="嘉艺拍卖（J-Art Auction Pte. Ltd.）立足新加坡，携手浙江嘉艺拍卖，臻选张大千、徐悲鸿、吴冠中、齐白石等近现代中国书画名家力作，件件著录可考、来历清晰。">
+<!--
+  ════════════════════════════════════════════════════════════════
+  网站维护说明
+  ════════════════════════════════════════════════════════════════
+  · 本站自包含：index.html + img/ 文件夹，无任何外部依赖，整个文件夹
+    上传 Cloudflare Pages 即可。
+  · 作品图：img/<编号>.jpg 为网页内嵌图，<编号>-full.jpg 为点击放大的大图。
+    更换或新增作品：替换对应图片 + 在作品区复制一个 <article class="lot"> 块。
+  · 联系方式已填入：WhatsApp +65 9843 5556、邮箱 enquiry@j-art.com.sg。
+  · 英文品名为译名，可按需在各 <div class="title-en"> 处修改。
+  ════════════════════════════════════════════════════════════════
+-->
+<style>
+:root{
+  --paper:#F6F2E8; --paper2:#EFEADC; --ink:#1C1A17; --ink2:#5F584C;
+  --seal:#9E2B22; --line:#DBD2BF; --gold:#8C7B5B;
+  --serif:'Georgia','Times New Roman','Songti SC','Noto Serif CJK SC','Noto Serif SC','Source Han Serif SC',STSong,'SimSun',serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--serif);background:var(--paper);color:var(--ink);line-height:1.9;font-size:16px;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-decoration:none}
+em{font-style:normal}
+:focus-visible{outline:2px solid var(--seal);outline-offset:3px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 clamp(20px,4vw,56px)}
+.eyebrow{font-size:11px;letter-spacing:.34em;text-transform:uppercase;color:var(--gold)}
+
+/* header */
+header{position:sticky;top:0;z-index:40;background:rgba(246,242,232,.93);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;height:70px}
+.brand{display:flex;align-items:baseline;gap:12px}
+.brand b{font-size:20px;letter-spacing:.14em;font-weight:600}
+.brand span{font-size:10px;letter-spacing:.3em;color:var(--gold);text-transform:uppercase}
+nav{display:flex;gap:clamp(16px,2.4vw,30px)}
+nav a{font-size:14px;letter-spacing:.16em}
+nav a:hover{color:var(--seal)}
+
+/* hero */
+.hero{border-bottom:1px solid var(--line);background:
+  radial-gradient(120% 90% at 85% 10%, rgba(158,43,34,.05), transparent 60%), var(--paper)}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(30px,5vw,70px);align-items:center;
+  padding-top:clamp(48px,8vh,96px);padding-bottom:clamp(48px,8vh,96px)}
+.hero-copy .eyebrow{margin-bottom:22px}
+.hero-brand{font-size:clamp(40px,7vw,78px);line-height:1.02;letter-spacing:.06em;font-weight:600}
+.hero-brand small{display:block;font-size:clamp(13px,1.5vw,16px);letter-spacing:.42em;color:var(--gold);
+  font-weight:400;margin-top:16px;text-transform:uppercase}
+.hero h1{font-size:clamp(18px,2vw,23px);font-weight:600;letter-spacing:.08em;margin:30px 0 16px;line-height:1.7}
+.hero p{color:var(--ink2);font-size:15px;max-width:30em;margin-bottom:30px}
+.cta{display:flex;flex-wrap:wrap;gap:14px}
+.btn{display:inline-block;padding:13px 30px;font-size:13.5px;letter-spacing:.2em;border:1px solid var(--ink);transition:.25s}
+.btn:hover{background:var(--ink);color:var(--paper)}
+.btn.red{background:var(--seal);border-color:var(--seal);color:var(--paper)}
+.btn.red:hover{background:#86231b}
+.hero-art{justify-self:center;max-width:272px;width:100%}
+.hero-art .mnt{background:#FBF8F0;padding:14px;box-shadow:0 18px 50px rgba(28,26,23,.28);position:relative}
+.hero-art .mnt:after{content:"嘉";position:absolute;right:-16px;bottom:-16px;width:46px;height:46px;background:var(--seal);
+  color:#F6F2E8;display:flex;align-items:center;justify-content:center;font-size:24px;box-shadow:0 4px 14px rgba(0,0,0,.3)}
+.hero-art .mnt img{border:1px solid var(--line)}
+
+/* section frame */
+section{padding:clamp(60px,9vh,104px) 0}
+.sec-h{margin-bottom:clamp(30px,5vh,52px)}
+.sec-h h2{font-size:clamp(23px,3vw,31px);letter-spacing:.16em;font-weight:600;margin-top:8px}
+.sec-h .en{font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-top:10px}
+.rule{width:48px;height:2px;background:var(--seal);margin-top:16px}
+
+/* about */
+.about{background:var(--paper2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.about-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:clamp(30px,5vw,64px)}
+.about-grid p{font-size:16px;margin-bottom:18px;max-width:40em}
+.about aside{border-left:2px solid var(--seal);padding-left:26px;align-self:start}
+.about aside dl{display:grid;grid-template-columns:auto 1fr;gap:9px 16px;font-size:13.5px;color:var(--ink2)}
+.about aside dt{color:var(--gold);letter-spacing:.04em}
+.about aside dd{margin:0}
+
+/* filter */
+.filter{position:sticky;top:70px;z-index:30;background:rgba(246,242,232,.95);backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line);padding:14px 0}
+.filter .wrap{display:flex;flex-wrap:wrap;gap:8px 10px;align-items:center}
+.fbtn{font-family:var(--serif);font-size:13.5px;letter-spacing:.08em;color:var(--ink2);background:none;border:1px solid transparent;
+  padding:5px 13px;border-radius:999px;cursor:pointer;transition:.2s}
+.fbtn em{font-size:10px;letter-spacing:.14em;color:var(--gold);margin-left:4px;text-transform:uppercase}
+.fbtn:hover{color:var(--ink);border-color:var(--line)}
+.fbtn.is-on{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.fbtn.is-on em{color:#C9BE9F}
+
+/* lots */
+.lots{padding-top:clamp(40px,6vh,64px)}
+.lot{display:flex;gap:clamp(28px,4.5vw,64px);align-items:center;
+  padding:clamp(40px,6vh,70px) 0;border-top:1px solid var(--line)}
+.lot:nth-child(even){flex-direction:row-reverse}
+.plate{flex:1 1 0;min-width:0;display:flex;justify-content:center}
+.imgbtn{border:0;background:none;padding:0;cursor:zoom-in;display:block;max-width:100%}
+.plate img{max-height:76vh;width:auto;margin:0 auto;border:1px solid var(--line);
+  box-shadow:0 14px 40px rgba(28,26,23,.16);background:#FBF8F0;transition:.3s}
+.imgbtn:hover img{box-shadow:0 20px 54px rgba(28,26,23,.26)}
+.cat{flex:1 1 0;min-width:0}
+.artist{font-size:clamp(24px,2.6vw,30px);font-weight:600;letter-spacing:.06em}
+.artist .dates{font-size:15px;font-weight:400;color:var(--ink2);letter-spacing:0}
+.artist-en{font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);margin-top:4px}
+.title{font-size:clamp(19px,2vw,23px);font-weight:600;letter-spacing:.1em;margin-top:18px}
+.title-en{font-style:italic;color:var(--ink2);font-size:15px;margin-top:3px}
+.medium{margin-top:16px;font-size:14.5px;color:var(--ink)}
+.medium-en{font-size:12.5px;color:var(--ink2);font-style:italic;margin-top:2px}
+.rows{margin-top:18px;border-top:1px solid var(--line);padding-top:16px}
+.row{display:grid;grid-template-columns:6em 1fr;gap:4px 16px;margin-bottom:11px;font-size:13.5px;line-height:1.75}
+.row .lbl{color:var(--gold);letter-spacing:.06em;white-space:nowrap}
+.row .lbl em{white-space:normal}
+.row .lbl em{display:block;font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:#B6A98A;opacity:.7}
+.row .lbl em{color:#B6A98A}
+.row .lbl-red{color:var(--seal);font-weight:600}
+.row .lbl-red em{color:var(--seal);opacity:.75}
+.row .val{color:var(--ink2);min-width:0;overflow-wrap:anywhere}
+.row:only-child,.row:has(.val:only-child){grid-template-columns:1fr}
+.size{margin-top:16px;padding-top:14px;border-top:1px solid var(--line);font-size:13.5px;color:var(--ink2);letter-spacing:.04em}
+
+/* enquire */
+.enquire{background:var(--ink);color:#E9E2D2;text-align:center}
+.enquire .eyebrow{color:#B9A986}
+.enquire .eyebrow{color:#B9A986}
+.enquire h2{font-size:clamp(22px,3vw,30px);letter-spacing:.18em;margin-bottom:16px;font-weight:600}
+.enquire p{color:#B9B09C;max-width:36em;margin:0 auto 14px;font-size:15px}
+.enquire .ct{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-top:26px}
+.enquire .btn{border-color:#6E6552;color:#E9E2D2}
+.enquire .btn:hover{background:#E9E2D2;color:var(--ink)}
+.enquire .btn.red{background:var(--seal);border-color:var(--seal)}
+.addr{margin-top:28px;font-size:12.5px;color:#8E856F;letter-spacing:.08em;line-height:1.9}
+
+footer{background:#15130F;color:#8E856F;font-size:12px;letter-spacing:.05em}
+footer .wrap{padding:30px 0;display:flex;flex-wrap:wrap;gap:8px 30px;justify-content:space-between;line-height:1.9}
+
+/* lightbox */
+.lb{position:fixed;inset:0;z-index:90;background:rgba(18,16,12,.94);display:none;align-items:center;justify-content:center;padding:4vmin;cursor:zoom-out}
+.lb.on{display:flex}
+.lb img{max-width:96vw;max-height:92vh;width:auto;height:auto;box-shadow:0 10px 60px rgba(0,0,0,.6)}
+.lb .x{position:absolute;top:18px;right:24px;color:#E9E2D2;font-size:30px;background:none;border:0;cursor:pointer;line-height:1}
+
+@media(max-width:860px){
+  .hero .wrap{grid-template-columns:1fr;gap:34px;padding-top:40px}
+  .hero-art{order:0;max-width:224px}
+  .hero-brand{font-size:clamp(44px,13vw,60px)}
+  .about-grid{grid-template-columns:1fr}
+  .lot,.lot:nth-child(even){flex-direction:column;gap:26px}
+  .plate img{max-height:62vh}
+  .filter{top:70px}
+}
+@media(max-width:560px){
+  nav{gap:14px} nav a em{display:none}
+  .row{grid-template-columns:4.6em 1fr}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap bar">
+    <a class="brand" href="#top"><b>嘉艺拍卖</b><span>J-Art Auction</span></a>
+    <nav>
+      <a href="#works">臻选</a>
+      <a href="#about">关于</a>
+      <a href="#enquire">洽询</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-copy">
+        <div class="eyebrow">Singapore · Chinese Paintings &amp; Calligraphy</div>
+        <div class="hero-brand">嘉藝拍賣<small>J-Art Auction</small></div>
+        <h1>近现代中国书画 · 名家臻选</h1>
+        <p>嘉艺拍卖立足新加坡，携手浙江嘉艺拍卖，臻选近现代中国书画名家力作 —— 件件款识完备、出版著录可考、来历清晰。</p>
+        <div class="cta">
+          <a class="btn red" href="#works">浏览臻选</a>
+          <a class="btn" href="#enquire">预约洽询</a>
+        </div>
+      </div>
+      <div class="hero-art">
+        <div class="mnt"><img src="img/25sp0130.jpg" alt="徐悲鸿《马踏清秋》" width="640" height="1100"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="about">
+    <div class="wrap">
+      <div class="sec-h"><div class="eyebrow">About</div><h2>关于嘉艺</h2><div class="rule"></div></div>
+      <div class="about-grid">
+        <div>
+          <p>嘉艺拍卖（J-Art Auction）是一家立足新加坡的中国书画拍卖机构，专注二十世纪近现代名家书画。我们与浙江嘉艺拍卖紧密合作，依托其在中国艺术市场多年积累的征集网络与学术资源，将经权威出版、著录与展览的名家力作，带到新加坡及东南亚藏家面前。</p>
+          <p>我们相信，真正的价值建立在可考的来历之上。每一件经手作品，均备有完整的款识、钤印与出版著录记录，并经专业鉴定；跨境征集、运输与结算循合规途径办理，让藏家安心入藏、从容传承。</p>
+        </div>
+        <aside>
+          <dl>
+            <dt>机构</dt><dd>嘉艺拍卖有限公司<br>J-Art Auction Pte. Ltd.</dd>
+            <dt>UEN</dt><dd>202617736H</dd>
+            <dt>专长</dt><dd>近现代中国书画 · 私洽与拍卖</dd>
+            <dt>合作</dt><dd>浙江嘉艺拍卖<br>Zhejiang Jiayi Auction</dd>
+            <dt>地址</dt><dd>281 River Valley Road, #01-02<br>Singapore 238322</dd>
+          </dl>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <div class="filter" id="works">
+    <div class="wrap">
+      <button class="fbtn is-on" data-f="all">全部 <em>All</em></button>
+<button class="fbtn" data-f="zhangdaqian">张大千</button>
+<button class="fbtn" data-f="xubeihong">徐悲鸿</button>
+<button class="fbtn" data-f="wuguanzhong">吴冠中</button>
+<button class="fbtn" data-f="qibaishi">齐白石</button>
+<button class="fbtn" data-f="linzexu">林则徐</button>
+<button class="fbtn" data-f="dongqichang">董其昌</button>
+<button class="fbtn" data-f="yibingshou">伊秉绶</button>
+<button class="fbtn" data-f="wangyuanqi">王原祁</button>
+<button class="fbtn" data-f="shenquan">沈铨</button>
+<button class="fbtn" data-f="jiangzhaohe">蒋兆和</button>
+<button class="fbtn" data-f="chenhongshou">陈鸿寿</button>
+<button class="fbtn" data-f="wuchangshuogaoyongzhi">吴昌硕 / 高邕之</button>
+    </div>
+  </div>
+
+  <section class="lots">
+    <div class="wrap">
+      <div class="sec-h"><div class="eyebrow">Selected Works · 本季臻选 26 件</div><h2>名家臻选</h2><div class="rule"></div></div>
+      
+  <article class="lot" data-artist="zhangdaqian">
+    <figure class="plate">
+      <button class="imgbtn" data-full="img/24au0109-full.jpg" aria-label="放大查看 张大千《荷香满襟》">
+        <img src="img/24au0109.jpg" width="1100" height="548" loading="lazy"
+             alt="张大千《荷香满襟》" style="aspect-ratio:1100/548">
+      </button>
+    </figure>
+    <div class="cat">
+      <div class="artist">张大千 <span class="dates">（1899-1983）</span></div>
+      <div class="artist-en">Zhang Daqian</div>
+      <h3 class="title">荷香满襟</h3>
+      <div class="title-en">Lotus Fragrance Fills the Robe</div>
+      <div class="medium">设色纸本 镜片 1980年作</div>
+      <div class="medium-en">Ink and colour on paper, mounted, dated 1980</div>
+      <div class="rows">
+        <div class="row"><span class="lbl">款识<em>Inscription</em></span><span class="val">晓来闲立回塘。一襟香。玉飐云松风外、数枝凉。相并浑如私语，恼人肠。飞去方知白鹭、在花旁。六十九年庚申二月十一日，偶忆吾家功父《相见欢》小令，乘兴命笔。八十二叟爰，摩耶精舍</span></div>
+<div class="row"><span class="lbl">钤印<em>Seals</em></span><span class="val">张爰之印（白）、大千居士（朱）、摩耶精舍（朱）、大千豪髮（朱）、己亥己巳戊寅辛酉（白）</span></div>
+        <div class="row"><span class="lbl">说明<em>Note</em></span><span class="val">本作品为著名藏家林秀槐提供予纽约华美协进社进行慈善拍卖，原藏家于此拍卖会购得。（信息来源于网络）</span></div>
+      </div>
+      <div class="size">45×90.5cm 约3.7平尺 · 45 × 90.5 cm</div>
+    </div>
+  </article>
+
+  <article class="lot" data-artist="zhangdaqian">
+    <figure class="plate">
+      <button class="imgbtn" data-full="img/25au0155-full.jpg" aria-label="放大查看 张大千《粉墙红杏一枝开》">
+        <img src="img/25au0155.jpg" width="666" height="1100" loading="lazy"
+             alt="张大千《粉墙红杏一枝开》" style="aspect-ratio:666/1100">
+      </button>
+    </figure>
+    <div class="cat">
+      <div class="artist">张大千 <span class="dates">（1899-1983）</span></div>
+      <div class="artist-en">Zhang Daqian</div>
+      <h3 class="title">粉墙红杏一枝开</h3>
+      <div class="title-en">A Branch of Red Apricot by the White Wall</div>
+      <div class="medium">设色纸本 镜片 1978年作</div>
+      <div class="medium-en">Ink and colour on paper, mounted, dated 1978</div>
+      <div class="rows">
+        <div class="row"><span class="lbl">款识<em>Inscription</em></span><span class="val">偶然乘兴偶然来，偶爱闲行步绿苔；此是谁家好庭院，粉墙红杏一枝开。画成戏题，乃翁殊未老也。六十七年春日。八十叟爰</span></div>
+<div class="row"><span class="lbl">钤印<em>Seals</em></span><span class="val">张爰之印（白）、大千居士（朱）、戊午（朱）、春长好（朱）</span></div>
+        <div class="row"><span class="lbl lbl-red">出版<em>Published</em></span><span class="val">1.《张大千书画集》第一集p87，台湾历史博物馆，1980。<br>2.《张大千书画集》下集p365，人民美术出版社，1991。<br>3.《形象之外张大千的生活与艺术》p85，年新知三联书店，2019</span></div>
+<div class="row"><span class="lbl lbl-red">著录<em>Literature</em></span><span class="val">1.《形象之外张大千的生活与艺术》p106，年九歌出版社，1983。<br>2.《张大千诗文集编年》p183，荣宝斋出版社，1990。<br>3.《张大千诗词选注》p271，四川美术出版社，1991。<br>4.《张大千诗词集》下册p589，花城出版社，1999。<br>5.《张大千的传奇与风流》p132，东方出版社，2008</span></div>
+<div class="row"><span class="lbl">来源<em>Provenance</em></span><span class="val">胡琏家族收藏</span></div>
+      </div>
+      <div class="size">67.5×41cm 约2.5平尺 · 67.5 × 41 cm</div>
+    </div>
+  </article>
+
+  <article class="lot" data-artist="zhangdaqian">
+    <figure class="plate">
+      <button class="imgbtn" data-full="img/25au0173-full.jpg" aria-label="放大查看 张大千《青绿江山》">
+        <img src="img/25au0173.jpg" width="404" height="1100" loading="lazy"
+             alt="张大千《青绿江山》" style="aspect-ratio:404/1100">
+      </button>
+    </figure>
+    <div class="cat">
+      <div class="artist">张大千 <span class="dates">（1899-1983）</span></div>
+      <div class="artist-en">Zhang Daqian</div>
+      <h3 class="title">青绿江山</h3>
+      <div class="title-en">Blue-and-Green Rivers and Mountains</div>
+      <div class="medium">设色纸本 镜片 1939年作</div>
+      <div class="medium-en">Ink and colour on paper, mounted, dated 1939</div>
+      <div class="rows">
+        <div class="row"><span class="lbl">款识<em>Inscription</em></span><span class="val">己卯十月朔，恭介仲长四兄四十生日。弟张大千再拜</span></div>
+<div class="row"><span class="lbl">钤印<em>Seals</em></span><span class="val">张爰（白）、大千（朱）</span></div>
+        <div class="row"><span class="lbl lbl-red">出版<em>Published</em></span><span class="val">《传承——人美‘大红袍’甄选书画作品展作品集》p58-59，人民美术出版社，2024</span></div>
+<div class="row"><span class="lbl lbl-red">展览<em>Exhibited</em></span><span class="val">「传承——人美‘大红袍’甄选书画作品展」，人美美术馆，2024年11月</span></div>
+<div class="row"><span class="lbl">说明<em>Note</em></span><span class="val">“仲长”即为上海籍艺术家黄仲长。1921年主办《时报》，后兼任《时报画报》编辑。曾与郎静山共同组织三友影会。黄仲长与张大千、郎静山等人交往甚密</span></div>
+<div class="row"><span class="lbl">来源<em>Provenance</em></span><span class="val">1.中国嘉德2003年第671号。<br>2.蔗园主人珍藏</span></div>
+      </div>
+      <div class="size">80×29.5cm 约2.1平尺 · 80 × 29.5 cm</div>
+    </div>
+  </article>
+
+  <article class="lot" data-artist="zhangdaqian">
+    <figure class="plate">
+      <button class="imgbtn" data-full="img/25au0484-full.jpg" aria-label="放大查看 张大千《荷花》">
+        <img src="img/25au0484.jpg" width="1100" height="788" loading="lazy"
+             alt="张大千《荷花》" style="aspect-ratio:1100/788">
+      </button>
+    </figure>
+    <div class="cat">
+      <div class="artist">张大千 <span class="dates">（1899-1983）</span></div>
+      <div class="artist-en">Zhang Daqian</div>
+      <h3 class="title">荷花</h3>
+      <div class="title-en">Lotus</div>
+      <div class="medium">设色纸本 镜片 1971年作</div>
+      <div class="medium-en">Ink and colour on paper, mounted, dated 1971</div>
+      <div class="rows">
+        <div class="row"><span class="lbl">款识<em>Inscription</em></span><span class="val">高士为洁癖，没人长冶容。辛亥三月忆。明全兄教正。大千弟张爰</span></div>
+<div class="row"><span class="lbl">钤印<em>Seals</em></span><span class="val">张爰（白）、大千印（朱）</span></div>
+        
+      </div>
+      <div class="size">52×72.5cm 约3.4平尺 · 52 × 72.5 cm</div>
+    </div>
+  </article>
+
+  <article class="lot" data-artist="zhangdaqian">
+    <figure class="plate">
+      <button class="imgbtn" data-full="img/0272-full.jpg" aria-label="放大查看 张大千《双雀栖桠图》">
+        <img src="img/0272.jpg" width="380" height="1100" loading="lazy"
+             alt="张大千《双雀栖桠图》" style="aspect-ratio:380/1100">
+      </button>
+    </figure>
+    <div class="cat">
+      <div class="artist">张大千 <span class="dates">（1899-1983）</span></div>
+      <div class="artist-en">Zhang Daqian</div>
+      <h3 class="title">双雀栖桠图</h3>
+      <div class="title-en">Two Sparrows on a Branch</div>
+      <div class="medium">设色纸本 屏轴</div>
+      <div class="medium-en">Ink and colour on paper, a pair of hanging scrolls</div>
+      <div class="rows">
+        <div class="row"><span class="lbl">款识<em>Inscription</em></span><span class="val">宋人擅写禽鸟，偶尔摇笔属纸。自觉黄荃、雀白为巨擘。大千张爰</span></div>
+<div class="row"><span class="lbl">钤印<em>Seals</em></span><span class="val">张爰之印（白）、大千（朱）</span></div>
+        <div class="row"><span class="lbl lbl-red">出版<em>Published</em></span><span class="val">《上海艺术家》张大千齐白石特刊第93页，上海艺术家编辑部，2007年</span></div>
+      </div>
+      <div class="size">94.5×29.5cm 约2.5平尺 · 94.5 × 29.5 cm</div>
+    </div>
+  </article>
+
+  <article class="lot" data-artist="zhangdaqian">
+    <figure class="plate">
+      <button class="imgbtn" data-full="img/0292-full.jpg" aria-label="放大查看 张大千《江渡图》">
+        <img src="img/0292.jpg" width="793" height="1100" loading="lazy"
+             alt="张大千《江渡图》" style="aspect-ratio:793/1100">
+      </button>
+    </figure>
+    <div class="cat">
+      <div class="artist">张大千 <span class="dates">（1899-1983）</span></div>
+      <div class="artist-en">Zhang Daqian</div>
+      <h3 class="title">江渡图</h3>
+      <div class="title-en">Crossing the River</div>
+      <div class="medium">设色纸本 镜片</div>
+      <div class="medium-en">Ink and colour on paper, mounted</div>
+      <div class="rows">
+        <div class="row"><span class="lbl">释文<em>Text</em></span><span class="val">山晓凌寒一角青，春来烟树画娉婷。布帆安稳云波暖，归梦衡门过远汀</span></div>
+<div class="row"><span class="lbl">款识<em>Inscription</em></span><span class="val">大千居士</span></div>
+<div class="row"><span class="lbl">钤印<em>Seals</em></span><span class="val">张爰私印（白）、大千居士（朱）</span></div>
+        
+      </div>
+      <div class="size">93×37cm 约3.1平尺 · 93 × 37 cm</div>
+    </div>
+  </article>
+
+  <article class="lot" data-artist="zhangdaqian">
+    <figure class="plate">
+      <button class="imgbtn" data-full="img/0295-full.jpg" aria-label="放大查看 张大千《高呼与可图》">
+        <img src="img/0295.jpg" width="450" height="1100" loading="lazy"
+             alt="张大千《高呼与可图》" style="aspect-ratio:450/1100">
+      </button>
+    </figure>
+    <div class="cat">
+      <div class="artist">张大千 <span class="dates">（1899-1983）</span></div>
+      <div class="artist-en">Zhang Daqian</div>
+      <h3 class="title">高呼与可图</h3>
+      <div class="title-en">In Homage to Wen Yuke</div>
+      <div class="medium">设色纸本 立轴 1949年作</div>
+      <div class="medium-en">Ink and colour on paper, hanging scroll, dated 1949</div>
+      <div class="rows">
+        <div class="row"><span class="lbl">款识<em>Inscription</em></span><span class="val">高呼兴可。己丑九月既望写赠文韩小友清玩。大千居士爰</span></div>
+<div class="row"><span class="lbl">钤印<em>Seals</em></span><span class="val">张爰之印（白）、大千居士（朱）、大风堂（朱）</span></div>
+        
+      </div>
+      <div class="size">132.5×49.5cm 约5.9平尺 · 132.5 × 49.5 cm</div>
+    </div>
+  </article>
+
+  <article class="lot" data-artist="zhangdaqian">
+    <figure class="plate">
+      <button class="imgbtn" data-full="img/0376-full.jpg" aria-label="放大查看 张大千《番女掣厖图》">
+        <img src="img/0376.jpg" width="554" height="1100" loading="lazy"
+             alt="张大千《番女掣厖图》" style="aspect-ratio:554/1100">
+      </button>
+    </figure>
+    <div class="cat">
+      <div class="artist">张大千 <span class="dates">（1899-1983）</span></div>
+      <div class="artist-en">Zhang Daqian</div>
+      <h3 class="title">番女掣厖图</h3>
+      <div class="title-en">A Frontier Girl Leading a Hound</div>
+      <div class="medium">设色纸本 立轴 1943年作</div>
+      <div class="medium-en">Ink and colour on paper, hanging scroll, dated 1943</div>
+      <div class="rows">
+        <div class="row"><span class="lbl">款识<em>Inscription</em></span><span class="val">1.癸未秋孟，忆写青海三角峰所见。蜀郡大千张爰大风堂下。<br>2.此往岁於成都时，照伯陵老友约之嘱，为题记以贻其兄一物之约。失迺如此傥所谓数定也耶。丁亥三月大千居士爰</span></div>
+<div class="row"><span class="lbl">钤印<em>Seals</em></span><span class="val">张爰（白）、大千居士（朱）、张爰（白）</span></div>
+        <div class="row"><span class="lbl">说明<em>Note</em></span><span class="val">1.香港佳士得1992年第176号。<br>2.上款薛岳（1896-1998），原名仰岳，字伯陵，乳名孝松，绰号“老虎仔”，广东省乐昌县人。中国国民党军高级将领。<br>3.1947年再题後贈送给薛岳</span></div>
+      </div>
+      <div class="size">95.5×48cm 约4.1平尺 · 95.5 × 48 cm</div>
+    </div>
+  </article>
+
+  <article class="lot" data-artist="xubeihong">
+    <figure class="plate">
+      <button class="imgbtn" data-full="img/24au0065-full.jpg" aria-label="放大查看 徐悲鸿《唯羡升平》">
+        <img src="img/24au0065.jpg" width="647" height="1100" loading="lazy"
+             alt="徐悲鸿《唯羡升平》" style="aspect-ratio:647/1100">
+      </button>
+    </figure>
+    <div class="cat">
+      <div class="artist">徐悲鸿 <span class="dates">（1895-1953）</span></div>
+      <div class="artist-en">Xu Beihong</div>
+      <h3 class="title">唯羡升平</h3>
+      <div class="title-en">Wishing Only for Peace</div>
+      <div class="medium">设色纸本 立轴 1934年作</div>
+      <div class="medium-en">Ink and colour on paper, hanging scroll, dated 1934</div>
+      <div class="rows">
+        <div class="row"><span class="lbl">款识<em>Inscription</em></span><span class="val">羡汝历世尽升平。甲戌首夏游俄京写奉碧霞夫人雅赏。悲鸿</span></div>
+<div class="row"><span class="lbl">钤印<em>Seals</em></span><span class="val">东海王孙（白）、有诗为证（白）</span></div>
+<div class="row"><span class="lbl">鉴藏印<em>Coll. seals</em></span><span class="val">张覃启印（白）</span></div>
+        <div class="row"><span class="lbl lbl-red">出版<em>Published</em></span><span class="val">1.《徐悲鸿美术全集·第一部》P180，四川美术版社，2011年。（信息来源于网络）2.《艺苑集珍：中国书画名家作品集萃》P96，西泠印社出版社，2011年</span></div>
+<div class="row"><span class="lbl">来源<em>Provenance</em></span><span class="val">中国嘉德2010年243号</span></div>
+<div class="row"><span class="lbl">说明<em>Note</em></span><span class="val">1.上款碧霞夫人为吴稚晖的夫人。1928年徐悲鸿举家从上海迁居南京，因创作而需要设有较大画室的公馆。当时的国民党元老吴稚晖先生热心资助他买地建宅，到了1932年，吴稚晖发起众人捐资，建成徐悲鸿公馆。徐悲鸿一家得以从拥挤的中央大学宿舍搬进新居。1937年抗日战争期间，画家随大学迁至重庆，他忧家忧国，为抗战筹款之事四处奔走，旅途中常与吴稚晖书信来往，处处得其帮助解决问题，足见二者关系之密。悲鸿多有作品赠与吴稚晖一家。<br>2.张覃启鉴藏，香港著名书画收藏家</span></div>
+      </div>
+      <div class="size">58×34cm 约1.8平尺 · 58 × 34 cm</div>
+    </div>
+  </article>
+
+  <article class="lot" data-artist="xubeihong">
+    <figure class="plate">
+      <button class="imgbtn" data-full="img/25sp0130-full.jpg" aria-label="放大查看 徐悲鸿《马踏清秋》">
+        <img src="img/25sp0130.jpg" width="640" height="1100" loading="lazy"
+             alt="徐悲鸿《马踏清秋》" style="aspect-ratio:640/1100">
+      </button>
+    </figure>
+    <div class="cat">
+      <div class="artist">徐悲鸿 <span class="dates">（1895-1953）</span></div>
+      <div class="artist-en">Xu Beihong</div>
+      <h3 class="title">马踏清秋</h3>
+      <div class="title-en">Steed in Clear Autumn</div>
+      <div class="medium">设色纸本 立轴 1945年作</div>
+      <div class="medium-en">Ink and colour on paper, hanging scroll, dated 1945</div>
+      <div class="rows">
+        <div class="row"><span class="lbl">款识<em>Inscription</em></span><span class="val">德继先生雅教，卅四年冬晚，悲鸿写</span></div>
+<div class="row"><span class="lbl">钤印<em>Seals</em></span><span class="val">东海王孙（白）</span></div>
+<div class="row"><span class="lbl">题签<em>Title slip</em></span><span class="val">悲鸿真迹。廖静文</span></div>
+<div class="row"><span class="lbl">钤印<em>Seals</em></span><span class="val">廖静文（白）</span></div>
+        <div class="row"><span class="lbl lbl-red">出版<em>Published</em></span><span class="val">《荣宝斋》P124，荣宝斋出版社，2009年第5期</span></div>
+      </div>
+      <div class="size">85.5×49cm 约3.8平尺 · 85.5 × 49 cm</div>
+    </div>
+  </article>
+
+  <article class="lot" data-artist="wuguanzhong">
+    <figure class="plate">
+      <button class="imgbtn" data-full="img/24au0116-full.jpg" aria-label="放大查看 吴冠中《荷塘春醒》">
+        <img src="img/24au0116.jpg" width="1100" height="1019" loading="lazy"
+             alt="吴冠中《荷塘春醒》" style="aspect-ratio:1100/1019">
+      </button>
+    </figure>
+    <div class="cat">
+      <div class="artist">吴冠中 <span class="dates">（1919-2010）</span></div>
+      <div class="artist-en">Wu Guanzhong</div>
+      <h3 class="title">荷塘春醒</h3>
+      <div class="title-en">Lotus Pond Awakening in Spring</div>
+      <div class="medium">设色纸本 镜片</div>
+      <div class="medium-en">Ink and colour on paper, mounted</div>
+      <div class="rows">
+        <div class="row"><span class="lbl">钤印<em>Seals</em></span><span class="val">吴冠中印（白）、八十年代（朱）</span></div>
+        
+      </div>
+      <div class="size">45×48.5cm 约2.0平尺 · 45 × 48.5 cm</div>
+    </div>
+  </article>
+
+  <article class="lot" data-artist="wuguanzhong">
+    <figure class="plate">
+      <button class="imgbtn" data-full="img/24au0117-full.jpg" aria-label="放大查看 吴冠中《江南人家》">
+        <img src="img/24au0117.jpg" width="1100" height="1031" loading="lazy"
+             alt="吴冠中《江南人家》" style="aspect-ratio:1100/1031">
+      </button>
+    </figure>
+    <div class="cat">
+      <div class="artist">吴冠中 <span class="dates">（1919-2010）</span></div>
+      <div class="artist-en">Wu Guanzhong</div>
+      <h3 class="title">江南人家</h3>
+      <div class="title-en">Homes of the Yangtze South</div>
+      <div class="medium">设色纸本 镜片 1994年作</div>
+      <div class="medium-en">Ink and colour on paper, mounted, dated 1994</div>
+      <div class="rows">
+        <div class="row"><span class="lbl">款识<em>Inscription</em></span><span class="val">吴冠中，94</span></div>
+<div class="row"><span class="lbl">钤印<em>Seals</em></span><span class="val">吴冠中印（朱）</span></div>
+        <div class="row"><span class="lbl lbl-red">出版<em>Published</em></span><span class="val">《吴冠中全集·第7卷》P244，湖南美术出版社，2007年</span></div>
+      </div>
+      <div class="size">44.5×48cm 约1.9平尺 · 44.5 × 48 cm</div>
+    </div>
+  </article>
+
+  <article class="lot" data-artist="wuguanzhong">
+    <figure class="plate">
+      <button class="imgbtn" data-full="img/25sp0116-full.jpg" aria-label="放大查看 吴冠中《昼·重庆》">
+        <img src="img/25sp0116.jpg" width="1100" height="883" loading="lazy"
+             alt="吴冠中《昼·重庆》" style="aspect-ratio:1100/883">
+      </button>
+    </figure>
+    <div class="cat">
+      <div class="artist">吴冠中 <span class="dates">（1919-2010）</span></div>
+      <div class="artist-en">Wu Guanzhong</div>
+      <h3 class="title">昼·重庆</h3>
+      <div class="title-en">Daytime · Chongqing</div>
+      <div class="medium">设色纸本 镜片</div>
+      <div class="medium-en">Ink and colour on paper, mounted</div>
+      <div class="rows">
+        <div class="row"><span class="lbl">钤印<em>Seals</em></span><span class="val">八十年代（朱）、荼（朱）、吴冠中印（白）</span></div>
+        <div class="row"><span class="lbl">说明<em>Note</em></span><span class="val">附深巷画廊证书</span></div>
+      </div>
+      <div class="size">68×85cm 约5.2平尺 · 68 × 85 cm</div>
+    </div>
+  </article>
+
+  <article class="lot" data-artist="wuguanzhong">
+    <figure class="plate">
+      <button class="imgbtn" data-full="img/25sp0117-full.jpg" aria-label="放大查看 吴冠中《野花》">
+        <img src="img/25sp0117.jpg" width="1100" height="870" loading="lazy"
+             alt="吴冠中《野花》" style="aspect-ratio:1100/870">
+      </button>
+    </figure>
+    <div class="cat">
+      <div class="artist">吴冠中 <span class="dates">（1919-2010）</span></div>
+      <div class="artist-en">Wu Guanzhong</div>
+      <h3 class="title">野花</h3>
+      <div class="title-en">Wild Flowers</div>
+      <div class="medium">布面油画 镜片 1994年作</div>
+      <div class="medium-en">Oil on canvas, mounted, dated 1994</div>
+      <div class="rows">
+        <div class="row"><span class="lbl">款识<em>Inscription</em></span><span class="val">荼，94</span></div>
+        <div class="row"><span class="lbl lbl-red">出版<em>Published</em></span><span class="val">《二十世纪美术作品档案·大师合卷I》，P393，河北教育出版社，2024年</span></div>
+      </div>
+      <div class="size">30×38.5cm 约1.0平尺 · 30 × 38.5 cm</div>
+    </div>
+  </article>
+
+  <article class="lot" data-artist="wuguanzhong">
+    <figure class="plate">
+      <button class="imgbtn" data-full="img/25au0235-full.jpg" aria-label="放大查看 吴冠中《忆太行》">
+        <img src="img/25au0235.jpg" width="1098" height="1100" loading="lazy"
+             alt="吴冠中《忆太行》" style="aspect-ratio:1098/1100">
+      </button>
+    </figure>
+    <div class="cat">
+      <div class="artist">吴冠中 <span class="dates">（1919-2010）</span></div>
+      <div class="artist-en">Wu Guanzhong</div>
+      <h3 class="title">忆太行</h3>
+      <div class="title-en">Remembering the Taihang Mountains</div>
+      <div class="medium">设色纸本 镜片 1989年作</div>
+      <div class="medium-en">Ink and colour on paper, mounted, dated 1989</div>
+      <div class="rows">
+        <div class="row"><span class="lbl">款识<em>Inscription</em></span><span class="val">忆太行。吴冠中，1989.</span></div>
+<div class="row"><span class="lbl">钤印<em>Seals</em></span><span class="val">吴冠中印（白）、八十年代（朱）</span></div>
+        <div class="row"><span class="lbl lbl-red">出版<em>Published</em></span><span class="val">《荣宝斋》2023年第四期</span></div>
+<div class="row"><span class="lbl">说明<em>Note</em></span><span class="val">附深巷画廊证书</span></div>
+      </div>
+      <div class="size">90×90cm 约7.3平尺 · 90 × 90 cm</div>
+    </div>
+  </article>
+
+  <article class="lot" data-artist="wuguanzhong">
+    <figure class="plate">
+      <button class="imgbtn" data-full="img/25au0451-full.jpg" aria-label="放大查看 吴冠中《万家灯火》">
+        <img src="img/25au0451.jpg" width="1100" height="1024" loading="lazy"
+             alt="吴冠中《万家灯火》" style="aspect-ratio:1100/1024">
+      </button>
+    </figure>
+    <div class="cat">
+      <div class="artist">吴冠中 <span class="dates">（1919-2010）</span></div>
+      <div class="artist-en">Wu Guanzhong</div>
+      <h3 class="title">万家灯火</h3>
+      <div class="title-en">Ten Thousand Household Lights</div>
+      <div class="medium">设色纸本 镜片</div>
+      <div class="medium-en">Ink and colour on paper, mounted</div>
+      <div class="rows">
+        <div class="row"><span class="lbl">款识<em>Inscription</em></span><span class="val">吴冠中</span></div>
+<div class="row"><span class="lbl">钤印<em>Seals</em></span><span class="val">吴冠中印（白）、九十年代（朱）</span></div>
+        
+      </div>
+      <div class="size">69×74.5cm 约4.6平尺 · 69 × 74.5 cm</div>
+    </div>
+  </article>
+
+  <article class="lot" data-artist="wuguanzhong">
+    <figure class="plate">
+      <button class="imgbtn" data-full="img/0260-full.jpg" aria-label="放大查看 吴冠中《孤松》">
+        <img src="img/0260.jpg" width="1100" height="857" loading="lazy"
+             alt="吴冠中《孤松》" style="aspect-ratio:1100/857">
+      </button>
+    </figure>
+    <div class="cat">
+      <div class="artist">吴冠中 <span class="dates">（1919-2010）</span></div>
+      <div class="artist-en">Wu Guanzhong</div>
+      <h3 class="title">孤松</h3>
+      <div class="title-en">Lone Pine</div>
+      <div class="medium">设色纸本 镜片 2007年作</div>
+      <div class="medium-en">Ink and colour on paper, mounted, dated 2007</div>
+      <div class="rows">
+        <div class="row"><span class="lbl">款识<em>Inscription</em></span><span class="val">吴冠中。2007，於香港</span></div>
+<div class="row"><span class="lbl">钤印<em>Seals</em></span><span class="val">吴冠中印（白）</span></div>
+<div class="row"><span class="lbl">鉴藏印<em>Coll. seals</em></span><span class="val">王良福珍藏印（白）</span></div>
+        <div class="row"><span class="lbl">说明<em>Note</em></span><span class="val">香港著名藏家王良福先生珍藏</span></div>
+      </div>
+      <div class="size">54×69cm 约3.4平尺 · 54 × 69 cm</div>
+    </div>
+  </article>
+
+  <article class="lot" data-artist="qibaishi">
+    <figure class="plate">
+      <button class="imgbtn" data-full="img/0300-full.jpg" aria-label="放大查看 齐白石《篆书·王荆公诗》">
+        <img src="img/0300.jpg" width="377" height="1100" loading="lazy"
+             alt="齐白石《篆书·王荆公诗》" style="aspect-ratio:377/1100">
+      </button>
+    </figure>
+    <div class="cat">
+      <div class="artist">齐白石 <span class="dates">（1864-1957）</span></div>
+      <div class="artist-en">Qi Baishi</div>
+      <h3 class="title">篆书·王荆公诗</h3>
+      <div class="title-en">Wang Anshi&#x27;s Verse in Seal Script</div>
+      <div class="medium">水墨纸本 立轴 1942年作</div>
+      <div class="medium-en">Ink on paper, hanging scroll, dated 1942</div>
+      <div class="rows">
+        <div class="row"><span class="lbl">释文<em>Text</em></span><span class="val">杨柳春风绿岸，桃花落日红酣。三十六陂秋水，白头重到江南</span></div>
+<div class="row"><span class="lbl">款识<em>Inscription</em></span><span class="val">篆王荆公诗。振青先生雅属，八十二岁白石</span></div>
+<div class="row"><span class="lbl">钤印<em>Seals</em></span><span class="val">老白（白）、悔乌堂（朱）</span></div>
+        
+      </div>
+      <div class="size">98×33cm 约2.9平尺 · 98 × 33 cm</div>
+    </div>
+  </article>
+
+  <article class="lot" data-artist="linzexu">
+    <figure class="plate">
+      <button class="imgbtn" data-full="img/25sp0140-full.jpg" aria-label="放大查看 林则徐《行书八言联》">
+        <img src="img/25sp0140.jpg" width="481" height="1100" loading="lazy"
+             alt="林则徐《行书八言联》" style="aspect-ratio:481/1100">
+      </button>
+    </figure>
+    <div class="cat">
+      <div class="artist">林则徐 <span class="dates">（1785-1850）</span></div>
+      <div class="artist-en">Lin Zexu</div>
+      <h3 class="title">行书八言联</h3>
+      <div class="title-en">Eight-Character Couplet in Running Script</div>
+      <div class="medium">洒金笺本 屏轴</div>
+      <div class="medium-en">Ink on gold-flecked paper, a pair of hanging scrolls</div>
+      <div class="rows">
+        <div class="row"><span class="lbl">释文<em>Text</em></span><span class="val">为学日益为道日损，大勇若怯大智若愚</span></div>
+<div class="row"><span class="lbl">款识<em>Inscription</em></span><span class="val">月舫二兄大人属，少穆弟林则徐</span></div>
+<div class="row"><span class="lbl">钤印<em>Seals</em></span><span class="val">臣林则徐字少穆印（白）、身行万里半天下（朱）</span></div>
+        <div class="row"><span class="lbl lbl-red">出版<em>Published</em></span><span class="val">1.《林则徐手书楹联》，中华书局影印，1928年。<br>2.《百家名联墨迹》P80，文化艺术出版社，1989年。<br>3.《中国书法篆刻鉴赏辞典》P1114-1116，农村读物出版社，1989年。<br>4.《古今百家名联墨迹欣赏》P114-115，学林出版社，1990年。<br>5.《历代名人楹联墨迹》P379，上海人民美术出版社，1991年。<br>6.《林则徐楹联辑注》首张插图，中州古籍出版社，1993年。<br>7.《清代书法名作鉴赏》P197-198，中央编译出版社，2005年。<br>8.《古今百家名联墨迹欣赏》P114-115，上海远东出版社，2007年</span></div>
+<div class="row"><span class="lbl lbl-red">著录<em>Literature</em></span><span class="val">1.《中国古今实用对联大全》P701，中国文联出版公司，1988年。<br>2.《历代名人楹联》P73，巴蜀书社，1989年。<br>3.《林则徐楹联辑注》P23，中州古籍出版社，1993年。<br>4.《赠言大全》P517，湖北人民出版社，1994年。<br>5.《新编酬世文牍大观》P263，吉林摄影出版社，1996年。<br>6.《大学书法行书临摹教程》P378，中国美术学院出版社，1997年。<br>7.《古今题画词精选》P189，中国美术学院出版社，1999年。<br>8.《传世语海·第4册》P3218，吉林人民出版社，2000年。<br>9.《实用对联精选》P423，河南人民出版社，2001年。<br>10.《书画篆刻用语宝典》P13，中国文联出版社，2006年。<br>11.《大学书法行书临摹教程》P275，天津古籍出版社，2009年。<br>12.《清十大名家对联集·上》P266，岳麓书社，2008年</span></div>
+<div class="row"><span class="lbl">说明<em>Note</em></span><span class="val">1.静寄轩主人刘靖基旧藏。刘靖基（1902-1997）是我国著名爱国实业家，上海的对外开放以及健康投资环境成为现实的背后功臣，同时也是著名的书画鉴赏收藏家，上海博物馆所藏南宋张即之《楷书待漏院记卷》、元朱德润《浑沦图卷》、明董其昌《秋兴八景图册》即为刘靖基所捐赠。本标的是唯一编入大学书法教材中《历代行书著名碑帖目录》的林则徐书联作品，可见本作在林则徐众多书作之中的地位。<br>2.上款人龚裕，清代江苏清河（今清江）人，字惇夫，号月舫。嘉庆丁丑（1817）进士。道光二十七年（1847）由清河道迁直隶按察使，后升山西巡抚。改调湖北，兼署湖广总督。咸丰二年（1852）洪秀全率太平军攻下武昌，他因镇压失败，褫职。仍留湖北差委。旋遣戍新疆军台</span></div>
+      </div>
+      <div class="size">201.5×43cm（each） 约7.8平尺（每幅） · 201.5 × 43 cm (each)</div>
+    </div>
+  </article>
+
+  <article class="lot" data-artist="dongqichang">
+    <figure class="plate">
+      <button class="imgbtn" data-full="img/25au0302-full.jpg" aria-label="放大查看 董其昌《卢鸿嵩山草堂图》">
+        <img src="img/25au0302.jpg" width="330" height="1100" loading="lazy"
+             alt="董其昌《卢鸿嵩山草堂图》" style="aspect-ratio:330/1100">
+      </button>
+    </figure>
+    <div class="cat">
+      <div class="artist">董其昌 <span class="dates">（1555-1636）</span></div>
+      <div class="artist-en">Dong Qichang</div>
+      <h3 class="title">卢鸿嵩山草堂图</h3>
+      <div class="title-en">Lu Hong&#x27;s Thatched Hall in the Song Mountains</div>
+      <div class="medium">水墨纸本 立轴</div>
+      <div class="medium-en">Ink on paper, hanging scroll</div>
+      <div class="rows">
+        <div class="row"><span class="lbl">款识<em>Inscription</em></span><span class="val">龙眠画卢鸿学堂图，皆用荆浩树石，余为仿之，玄宰。王文治</span></div>
+<div class="row"><span class="lbl">题跋<em>Colophon</em></span><span class="val">浩隐嵩山下，悠然神自清，世尘原不染，缓鸟亦忘情，容膝乾坤大，挥毫洞壑横，当年栖息处，千载寂无声。俞紫芝诗，王文治书</span></div>
+<div class="row"><span class="lbl">钤印<em>Seals</em></span><span class="val">董氏玄宰（朱）、董其昌（间）</span></div>
+<div class="row"><span class="lbl">鉴藏印<em>Coll. seals</em></span><span class="val">王氏禹卿（朱）、心赏（朱）、近銮堂（朱）、晴窗一日几回看（朱）、泉声树色织云堂印、商城黄幽松藏书画印（朱）、庞耐（朱）、清赏（朱）、子子孙孙永保之（白）、织云堂（朱）、泉生树色（白）</span></div>
+        <div class="row"><span class="lbl lbl-red">著录<em>Literature</em></span><span class="val">1.《翁文恭公日记二》p7，1925年商务印书馆。1973年再版。<br>2.《黄宾虹传记年谱合编》p64-65，人民美术出版社，1985</span></div>
+<div class="row"><span class="lbl">说明<em>Note</em></span><span class="val">1.王文治题跋<br>2.黄宾虹旧藏</span></div>
+      </div>
+      <div class="size">118×35cm 约3.7平尺 · 118 × 35 cm</div>
+    </div>
+  </article>
+
+  <article class="lot" data-artist="yibingshou">
+    <figure class="plate">
+      <button class="imgbtn" data-full="img/25au0287-full.jpg" aria-label="放大查看 伊秉绶《隶书五言联》">
+        <img src="img/25au0287.jpg" width="563" height="1100" loading="lazy"
+             alt="伊秉绶《隶书五言联》" style="aspect-ratio:563/1100">
+      </button>
+    </figure>
+    <div class="cat">
+      <div class="artist">伊秉绶 <span class="dates">（1754-1815）</span></div>
+      <div class="artist-en">Yi Bingshou</div>
+      <h3 class="title">隶书五言联</h3>
+      <div class="title-en">Five-Character Couplet in Clerical Script</div>
+      <div class="medium">水墨纸本 屏轴 1804年作</div>
+      <div class="medium-en">Ink on paper, a pair of hanging scrolls, dated 1804</div>
+      <div class="rows">
+        <div class="row"><span class="lbl">释文<em>Text</em></span><span class="val">兰风载芳润，谷性多温良</span></div>
+<div class="row"><span class="lbl">款识<em>Inscription</em></span><span class="val">书为敏斋大兄鉴正，嘉庆九年中秋，汀州弟伊秉绶</span></div>
+<div class="row"><span class="lbl">钤印<em>Seals</em></span><span class="val">默庵（朱）、吾得之忠信（白）</span></div>
+        <div class="row"><span class="lbl lbl-red">出版<em>Published</em></span><span class="val">《乐在轩藏联》p26，好景印务公司</span></div>
+<div class="row"><span class="lbl">说明<em>Note</em></span><span class="val">《伊秉绶年谱》p280，载：（嘉庆十年）廿日，与朱鹤年至苏斋论画观《唐五代宋元明六法大成册》，画皆名笔，尤以《北宋李营邱寒林鸦阵图》目所未见。、翁方纲跋《北宋李营邱寒林鸦阵图》:“敏斋以所藏此帧持来苏斋属题，适伊秉绶、朱鹤年也至苏斋论画，见册内有此幅，大惊，谓从来目所未见也。野云为之狂叫半日，低不能舍去。仲春廿日记于此。”（《岳雪楼书画录》卷一，页252）案:“敏斋”，未详俟考，吴《谱》以为应宝时（敏斋），时代不合，未可信</span></div>
+      </div>
+      <div class="size">132.5×33.5cm×2 约4.0平尺（每幅） · 132.5 × 33.5 cm ×2 (each)</div>
+    </div>
+  </article>
+
+  <article class="lot" data-artist="wangyuanqi">
+    <figure class="plate">
+      <button class="imgbtn" data-full="img/0381-full.jpg" aria-label="放大查看 王原祁《仿梅道人笔意》">
+        <img src="img/0381.jpg" width="659" height="1100" loading="lazy"
+             alt="王原祁《仿梅道人笔意》" style="aspect-ratio:659/1100">
+      </button>
+    </figure>
+    <div class="cat">
+      <div class="artist">王原祁 <span class="dates">（1642-1715）</span></div>
+      <div class="artist-en">Wang Yuanqi</div>
+      <h3 class="title">仿梅道人笔意</h3>
+      <div class="title-en">After the Manner of Wu Zhen</div>
+      <div class="medium">水墨纸本 立轴 1702年作</div>
+      <div class="medium-en">Ink on paper, hanging scroll, dated 1702</div>
+      <div class="rows">
+        <div class="row"><span class="lbl">款识<em>Inscription</em></span><span class="val">康熙壬午夏日仿梅道人笔。王原祁</span></div>
+<div class="row"><span class="lbl">钤印<em>Seals</em></span><span class="val">王原祁印（白）、麓台（朱）、古期斋（朱）</span></div>
+<div class="row"><span class="lbl">鉴藏印<em>Coll. seals</em></span><span class="val">宛平夏氏鉴藏（朱）、理庵待价（朱）</span></div>
+        <div class="row"><span class="lbl">说明<em>Note</em></span><span class="val">1.梅道人即元代著名画家吴镇。<br>2.附佳士得签</span></div>
+      </div>
+      <div class="size">90×53.5cm 约4.3平尺 · 90 × 53.5 cm</div>
+    </div>
+  </article>
+
+  <article class="lot" data-artist="shenquan">
+    <figure class="plate">
+      <button class="imgbtn" data-full="img/0403-full.jpg" aria-label="放大查看 沈铨《三阳开泰》">
+        <img src="img/0403.jpg" width="555" height="1100" loading="lazy"
+             alt="沈铨《三阳开泰》" style="aspect-ratio:555/1100">
+      </button>
+    </figure>
+    <div class="cat">
+      <div class="artist">沈铨 <span class="dates">（1682-1760）</span></div>
+      <div class="artist-en">Shen Quan</div>
+      <h3 class="title">三阳开泰</h3>
+      <div class="title-en">Three Yang Bring Prosperity</div>
+      <div class="medium">设色纸本 立轴 1754年作</div>
+      <div class="medium-en">Ink and colour on paper, hanging scroll, dated 1754</div>
+      <div class="rows">
+        <div class="row"><span class="lbl">款识<em>Inscription</em></span><span class="val">甲戌小春南苹沈铨写</span></div>
+<div class="row"><span class="lbl">钤印<em>Seals</em></span><span class="val">沈铨之印（白）、南苹（朱）</span></div>
+<div class="row"><span class="lbl">鉴藏印<em>Coll. seals</em></span><span class="val">痴古（白）、远东李氏家藏（朱）、庭石珍藏（朱）</span></div>
+        <div class="row"><span class="lbl lbl-red">出版<em>Published</em></span><span class="val">《韩中古书画名品选》第一辑第173页，东方画廊，1979年</span></div>
+<div class="row"><span class="lbl lbl-red">著录<em>Literature</em></span><span class="val">1.《中国古代书画图目》第一册368页，文物出版社，1986年。<br>2.《古美术》第93期39页，三彩社，1990年</span></div>
+      </div>
+      <div class="size">117×59cm 约6.2平尺 · 117 × 59 cm</div>
+    </div>
+  </article>
+
+  <article class="lot" data-artist="jiangzhaohe">
+    <figure class="plate">
+      <button class="imgbtn" data-full="img/0251-full.jpg" aria-label="放大查看 蒋兆和《稚》">
+        <img src="img/0251.jpg" width="641" height="1100" loading="lazy"
+             alt="蒋兆和《稚》" style="aspect-ratio:641/1100">
+      </button>
+    </figure>
+    <div class="cat">
+      <div class="artist">蒋兆和 <span class="dates">（1904-1986）</span></div>
+      <div class="artist-en">Jiang Zhaohe</div>
+      <h3 class="title">稚</h3>
+      <div class="title-en">The Child</div>
+      <div class="medium">设色纸本 镜片</div>
+      <div class="medium-en">Ink and colour on paper, mounted</div>
+      <div class="rows">
+        <div class="row"><span class="lbl">款识<em>Inscription</em></span><span class="val">兆和</span></div>
+<div class="row"><span class="lbl">钤印<em>Seals</em></span><span class="val">七十有余（白）</span></div>
+        <div class="row"><span class="lbl lbl-red">出版<em>Published</em></span><span class="val">1.《蒋兆和作品全集·下》图编113，天津人民美术出版社，1993年。<br>2.《荣宝斋画谱》P36，荣宝斋出版社，1999年。<br>3.《中国美术家作品丛书·蒋兆和》P55，人民美术出版社，2001年版。<br>4.《中国名画家全集·蒋兆和》P199，河北教育出版社，2002年</span></div>
+<div class="row"><span class="lbl lbl-red">展览<em>Exhibited</em></span><span class="val">1981年1月，蒋兆和萧琼夫妇书画联展，深圳美术馆。（信息来源於网络）</span></div>
+      </div>
+      <div class="size">79.5×46.5cm 约3.3平尺 · 79.5 × 46.5 cm</div>
+    </div>
+  </article>
+
+  <article class="lot" data-artist="chenhongshou">
+    <figure class="plate">
+      <button class="imgbtn" data-full="img/0435-full.jpg" aria-label="放大查看 陈鸿寿《隶书七言联》">
+        <img src="img/0435.jpg" width="518" height="1100" loading="lazy"
+             alt="陈鸿寿《隶书七言联》" style="aspect-ratio:518/1100">
+      </button>
+    </figure>
+    <div class="cat">
+      <div class="artist">陈鸿寿 <span class="dates">（1768-1822）</span></div>
+      <div class="artist-en">Chen Hongshou</div>
+      <h3 class="title">隶书七言联</h3>
+      <div class="title-en">Seven-Character Couplet in Clerical Script</div>
+      <div class="medium">水墨笺本 屏轴</div>
+      <div class="medium-en">Ink on paper, a pair of hanging scrolls</div>
+      <div class="rows">
+        <div class="row"><span class="lbl">释文<em>Text</em></span><span class="val">抌稳海鱼镌紫石，扇凉山雪画青缯</span></div>
+<div class="row"><span class="lbl">款识<em>Inscription</em></span><span class="val">若轩七叔大人属。陈鸿寿</span></div>
+<div class="row"><span class="lbl">钤印<em>Seals</em></span><span class="val">种榆仙吏（白）、钱塘陈鸿寿曼生私印（白）</span></div>
+        
+      </div>
+      <div class="size">124.5×28.5cm×2 约3.2平尺（每幅） · 124.5 × 28.5 cm ×2 (each)</div>
+    </div>
+  </article>
+
+  <article class="lot" data-artist="wuchangshuogaoyongzhi">
+    <figure class="plate">
+      <button class="imgbtn" data-full="img/0330-full.jpg" aria-label="放大查看 吴昌硕 / 高邕之《秋艳 · 依样》">
+        <img src="img/0330.jpg" width="1100" height="1090" loading="lazy"
+             alt="吴昌硕 / 高邕之《秋艳 · 依样》" style="aspect-ratio:1100/1090">
+      </button>
+    </figure>
+    <div class="cat">
+      <div class="artist">吴昌硕 / 高邕之 <span class="dates">（1844–1927 / 1850–1921）</span></div>
+      <div class="artist-en">Wu Changshuo / Gao Yongzhi</div>
+      <h3 class="title">秋艳 · 依样</h3>
+      <div class="title-en">Autumn Splendour · After the Pattern</div>
+      <div class="medium">设色绢本 镜片 1903年作</div>
+      <div class="medium-en">Ink and colour on silk, mounted, dated 1903</div>
+      <div class="rows">
+        <div class="row"><span class="lbl">释文<em>Text</em></span><span class="val">浓艳灼灼云锦鲜，红霞裹住颇黎天。不须更乞胡麻饭，饱噉桃花已得仙</span></div>
+<div class="row"><span class="lbl">款识<em>Inscription</em></span><span class="val">1.依样。养公一笑。邕画。<br>2.䍩之老兄鉴家正写。癸卯新秋，俊卿</span></div>
+<div class="row"><span class="lbl">钤印<em>Seals</em></span><span class="val">缶（朱）、高邕之（白）</span></div>
+        
+      </div>
+      <div class="size">直径：24.5cm · Diameter 24.5 cm</div>
+    </div>
+  </article>
+    </div>
+  </section>
+
+  <section id="enquire" class="enquire">
+    <div class="wrap">
+      <div class="eyebrow">Enquire</div>
+      <h2>预约赏画 · 洽询</h2>
+      <p>所有作品均可预约赏鉴，中英文双语接待。欢迎藏家就单件作品的详情、状态与价格洽询，亦欢迎委托送拍。</p>
+      <div class="ct">
+        <a class="btn red" href="https://wa.me/6598435556" rel="noopener">WhatsApp 洽询</a>
+        <a class="btn" href="mailto:enquiry@j-art.com.sg">电邮联系</a>
+      </div>
+      <div class="addr">电话 / WhatsApp：+65 9843 5556　·　邮箱：enquiry@j-art.com.sg<br>281 River Valley Road, #01-02, Singapore 238322　·　赏画采取预约制 By appointment</div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>嘉艺拍卖有限公司　J-Art Auction Pte. Ltd.　·　UEN 202617736H<br>281 River Valley Road, #01-02, Singapore 238322　·　enquiry@j-art.com.sg　·　+65 9843 5556</p>
+    <p>与浙江嘉艺拍卖合作 · In cooperation with Zhejiang Jiayi Auction<br>© 2026 J-Art Auction Pte. Ltd.</p>
+  </div>
+</footer>
+
+<div class="lb" id="lb"><button class="x" aria-label="关闭">×</button><img src="" alt=""></div>
+
+<script>
+(function(){
+  // filter
+  var btns=document.querySelectorAll('.fbtn'), lots=document.querySelectorAll('.lot');
+  btns.forEach(function(b){b.addEventListener('click',function(){
+    btns.forEach(function(x){x.classList.remove('is-on')});b.classList.add('is-on');
+    var f=b.dataset.f;
+    lots.forEach(function(l){l.style.display=(f==='all'||l.dataset.artist===f)?'':'none';});
+    window.scrollTo({top:document.getElementById('works').offsetTop-60,behavior:'smooth'});
+  })});
+  // lightbox
+  var lb=document.getElementById('lb'), lbimg=lb.querySelector('img');
+  document.querySelectorAll('.imgbtn').forEach(function(btn){
+    btn.addEventListener('click',function(){lbimg.src=btn.dataset.full;lb.classList.add('on');});
+  });
+  function close(){lb.classList.remove('on');lbimg.src='';}
+  lb.addEventListener('click',close);
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});
+})();
+</script>
+</body>
+</html>
