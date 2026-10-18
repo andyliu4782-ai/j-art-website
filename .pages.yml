@@ -1,0 +1,28 @@
+media:
+  - name: images
+    label: 图片 Images
+    input: ""
+    output: "/"
+    categories: [image]
+    extensions: [jpg, jpeg, png, webp]
+
+content:
+  - name: works
+    label: 作品 Works（本季臻选）
+    type: file
+    path: works.json
+    format: json
+    list: true
+    fields:
+      - { name: artist, label: 艺术家, type: string }
+      - { name: artist_en, label: 艺术家(英文), type: string }
+      - { name: dates, label: 生卒年, type: string }
+      - { name: title, label: 品名, type: string }
+      - { name: title_en, label: 品名(英文), type: string }
+      - { name: medium, label: 质地/形制/年份, type: string }
+      - { name: medium_en, label: 质地(英文), type: string }
+      - { name: size, label: 尺寸, type: string }
+      - { name: size_en, label: 尺寸(英文), type: string }
+      - { name: inscription, label: "款识/钤印/鉴藏印（每行一项，如 款识：…）", type: text }
+      - { name: provenance, label: "出版/著录/展览/说明（每行一项）", type: text }
+      - { name: image, label: 作品图片, type: image }
